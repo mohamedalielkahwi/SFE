@@ -62,7 +62,7 @@ const InvitationPage = (): JSX.Element => {
           <p className="hero-label">{t.sectionLabel}</p>
 
           <div className="photo-frame">
-            <img src="/Mohamed Ali El Kahwi.png" alt={t.fullName} className="photo-img" />
+            <img src="/MohamedAliElKahwi.png" alt={t.fullName} className="photo-img" />
             {/* <div className="photo-placeholder" aria-hidden="true">
               <span className="camera-icon">📷</span>
               <span className="photo-text">Photo</span>
