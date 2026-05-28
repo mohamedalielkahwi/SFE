@@ -1,0 +1,586 @@
+/* ============================================================
+   GOOGLE FONTS
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@400;500&family=Amiri:wght@400;700&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --navy:       #1a2744;
+  --gold:       #c9a84c;
+  --ivory:      #faf8f3;
+  --white:      #ffffff;
+  --muted:      #8a8070;
+  --gold-faint: rgba(201, 168, 76, 0.05);
+  --shadow-card: 0 8px 40px rgba(26, 39, 68, 0.07);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--ivory);
+  color: var(--navy);
+}
+
+/* ============================================================
+   ROOT WRAPPER
+   ============================================================ */
+.invitation-root {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 20%, var(--ivory) 0%, #f0e5ca 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.top-bar {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 24px 0;
+}
+
+/* ============================================================
+   LANGUAGE SWITCHER — outlined gold pills
+   ============================================================ */
+.lang-switcher {
+  display: inline-flex;
+  gap: 8px;
+  direction: ltr;
+}
+
+.lang-switcher button {
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  line-height: 1.5;
+}
+
+.lang-switcher button:hover:not(.active) {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.lang-switcher button.active {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+
+/* ============================================================
+   PAGE CONTENT — fades on language switch
+   ============================================================ */
+.page-content {
+  width: 100%;
+  max-width: 860px;
+  padding: 44px 24px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.page-content.transitioning {
+  opacity: 0;
+}
+
+/* ============================================================
+   ORNAMENT DIVIDER
+   ============================================================ */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.hero-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* Photo frame: double-ring border via layered box-shadow */
+.photo-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 4px var(--white),
+    0 0 0 7px var(--gold),
+    0 12px 40px rgba(201, 168, 76, 0.22);
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f5f0e6 0%, #e8ddc8 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+/* When replacing with a real photo, add className="photo-img" to the <img> */
+.photo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.camera-icon {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.photo-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   SECTION CARD
+   ============================================================ */
+.section {
+  width: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 44px 48px;
+  box-shadow: var(--shadow-card);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--navy);
+  text-align: center;
+  margin: 0 0 32px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   EVENT DETAILS GRID
+   ============================================================ */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px 20px;
+  background: var(--gold-faint);
+  border-radius: 14px;
+}
+
+.detail-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.detail-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.detail-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+/* Visual indicator for TODO placeholder values */
+.placeholder {
+  opacity: 0.35;
+  font-style: italic;
+}
+
+/* ============================================================
+   MAP
+   ============================================================ */
+.map-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(26, 39, 68, 0.09);
+}
+
+.map-wrapper iframe {
+  display: block;
+}
+
+/* Transparent overlay that makes the whole map area a navigation link */
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: background 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.map-overlay:hover,
+.map-overlay:focus-visible {
+  background: rgba(26, 39, 68, 0.32);
+}
+
+.map-overlay-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  padding: 9px 22px;
+  background: rgba(26, 39, 68, 0.85);
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.map-overlay:hover .map-overlay-label,
+.map-overlay:focus-visible .map-overlay-label {
+  opacity: 1;
+}
+
+.map-address {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+/* ============================================================
+   INVITATION MESSAGE
+   ============================================================ */
+.message-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px;
+  color: var(--gold);
+  line-height: 0.7;
+  display: block;
+  text-align: center;
+  opacity: 0.55;
+  user-select: none;
+}
+
+.message-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--navy);
+  text-align: center;
+  margin: 12px 0;
+  padding: 0 16px;
+  max-width: 640px;
+}
+
+/* ============================================================
+   VIDEO SECTION
+   ============================================================ */
+.video-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  margin: -20px 0 24px;
+  line-height: 1.55;
+}
+
+.video-placeholder {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px dashed var(--gold);
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.video-play-icon {
+  font-size: 48px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.video-placeholder-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(250, 248, 243, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.directions-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.75;
+  text-align: center;
+  margin: 24px 0 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  width: 100%;
+  border-top: 1px solid var(--gold);
+  padding: 36px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--navy);
+  margin: 0;
+  text-align: center;
+}
+
+.footer-institute {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  text-align: center;
+}
+
+.footer-year {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.55;
+  margin: 0;
+}
+
+/* ============================================================
+   RTL — Arabic layout
+   ============================================================ */
+[dir="rtl"] .top-bar {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .hero-label {
+  letter-spacing: 0.1em;
+}
+
+[dir="rtl"] .hero-name {
+  font-family: 'Amiri', serif;
+  font-style: normal;
+}
+
+[dir="rtl"] .hero-tagline {
+  font-family: 'Amiri', serif;
+  font-style: normal;
+  font-size: 20px;
+}
+
+[dir="rtl"] .section-title {
+  font-family: 'Amiri', serif;
+}
+
+[dir="rtl"] .detail-item {
+  text-align: right;
+}
+
+[dir="rtl"] .detail-value {
+  font-family: 'Amiri', serif;
+}
+
+[dir="rtl"] .message-text {
+  font-family: 'Amiri', serif;
+  font-style: normal;
+  font-size: 21px;
+}
+
+[dir="rtl"] .directions-text {
+  font-family: 'Amiri', serif;
+  font-style: normal;
+}
+
+[dir="rtl"] .footer-quote {
+  font-family: 'Amiri', serif;
+  font-style: normal;
+}
+
+[dir="rtl"] .video-subtitle {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-institute {
+  direction: rtl;
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (< 600px)
+   ============================================================ */
+@media (max-width: 599px) {
+  .top-bar,
+  [dir="rtl"] .top-bar {
+    justify-content: center;
+    padding: 16px 20px 0;
+  }
+
+  .page-content {
+    padding: 32px 20px 56px;
+  }
+
+  .hero-name {
+    font-size: 28px;
+  }
+
+  .photo-frame {
+    width: 140px;
+    height: 140px;
+  }
+
+  .section {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .divider {
+    margin: 28px 0;
+  }
+
+  .message-text {
+    font-size: 17px;
+    padding: 0;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (600px – 1023px)
+   ============================================================ */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .page-content {
+    max-width: 680px;
+    padding: 44px 28px 72px;
+  }
+
+  .top-bar {
+    max-width: 680px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Desktop (≥ 1024px)
+   ============================================================ */
+@media (min-width: 1024px) {
+  .page-content {
+    max-width: 860px;
+    padding: 48px 40px 80px;
+  }
+
+  .top-bar {
+    max-width: 860px;
+    padding: 24px 40px 0;
+  }
+}
