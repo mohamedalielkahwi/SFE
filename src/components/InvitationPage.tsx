@@ -3,6 +3,48 @@ import translations from '../i18n/translations'
 import type { Language } from '../i18n/translations'
 import LanguageSwitcher from './LanguageSwitcher'
 import logo from '../assets/MohamedAliElKahwi.png'
+
+const IconCalendar = (): JSX.Element => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+    aria-hidden="true">
+    <rect x="2.5" y="4.5" width="15" height="13" rx="2" />
+    <line x1="2.5" y1="9" x2="17.5" y2="9" />
+    <line x1="6.5" y1="2.5" x2="6.5" y2="6.5" />
+    <line x1="13.5" y1="2.5" x2="13.5" y2="6.5" />
+  </svg>
+)
+
+const IconClock = (): JSX.Element => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+    aria-hidden="true">
+    <circle cx="10" cy="10" r="7.5" />
+    <polyline points="10,5.5 10,10 13,12.5" />
+  </svg>
+)
+
+const IconMapPin = (): JSX.Element => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+    aria-hidden="true">
+    <path d="M10 2.5a5 5 0 0 1 5 5c0 4-5 10-5 10S5 11.5 5 7.5a5 5 0 0 1 5-5z" />
+    <circle cx="10" cy="7.5" r="1.75" />
+  </svg>
+)
+
+const IconBuilding = (): JSX.Element => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+    aria-hidden="true">
+    <path d="M2 18V7.5L10 3L18 7.5V18" />
+    <line x1="2" y1="18" x2="18" y2="18" />
+    <rect x="8" y="12" width="4" height="6" rx="0.5" />
+    <rect x="4.5" y="9" width="3" height="2.5" rx="0.5" />
+    <rect x="12.5" y="9" width="3" height="2.5" rx="0.5" />
+  </svg>
+)
+
 const OrnamentDivider = (): JSX.Element => (
   <div className="divider" aria-hidden="true">
     <svg
@@ -81,7 +123,7 @@ const InvitationPage = (): JSX.Element => {
 
           <div className="details-grid">
             <div className="detail-item">
-              <span className="detail-icon">📅</span>
+              <span className="detail-icon"><IconCalendar /></span>
               <span className="detail-label">{t.detailDateLabel}</span>
               {/* TODO: replace placeholder with actual date, e.g. "15 Juin 2025" */}
               <span className="detail-value">
@@ -90,7 +132,7 @@ const InvitationPage = (): JSX.Element => {
             </div>
 
             <div className="detail-item">
-              <span className="detail-icon">🕐</span>
+              <span className="detail-icon"><IconClock /></span>
               <span className="detail-label">{t.detailTimeLabel}</span>
               {/* TODO: replace placeholder with actual time, e.g. "10:00" */}
               <span className="detail-value">
@@ -99,13 +141,13 @@ const InvitationPage = (): JSX.Element => {
             </div>
 
             <div className="detail-item">
-              <span className="detail-icon">📍</span>
+              <span className="detail-icon"><IconMapPin /></span>
               <span className="detail-label">{t.detailLocationLabel}</span>
               <span className="detail-value">ISSAT Sousse</span>
             </div>
 
             <div className="detail-item">
-              <span className="detail-icon">🏫</span>
+              <span className="detail-icon"><IconBuilding /></span>
               <span className="detail-label">{t.detailRoomLabel}</span>
               {/* TODO: replace placeholder with actual room, e.g. "Salle A1" */}
               <span className="detail-value">
