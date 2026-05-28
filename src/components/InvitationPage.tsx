@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, type JSX } from 'react'
 import translations from '../i18n/translations'
 import type { Language } from '../i18n/translations'
 import LanguageSwitcher from './LanguageSwitcher'
-
+import logo from '../assets/MohamedAliElKahwi.png'
 const OrnamentDivider = (): JSX.Element => (
   <div className="divider" aria-hidden="true">
     <svg
@@ -62,7 +62,7 @@ const InvitationPage = (): JSX.Element => {
           <p className="hero-label">{t.sectionLabel}</p>
 
           <div className="photo-frame">
-            <img src="/MohamedAliElKahwi.png" alt={t.fullName} className="photo-img" />
+            <img src={logo} alt={t.fullName} className="photo-img" />
             {/* <div className="photo-placeholder" aria-hidden="true">
               <span className="camera-icon">📷</span>
               <span className="photo-text">Photo</span>
