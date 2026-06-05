@@ -3,6 +3,7 @@ import translations from '../i18n/translations'
 import type { Language } from '../i18n/translations'
 import LanguageSwitcher from './LanguageSwitcher'
 import logo from '../assets/MohamedAliElKahwi.png'
+import guide from '../assets/guide.mp4'
 
 const IconCalendar = (): JSX.Element => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -201,23 +202,12 @@ const InvitationPage = (): JSX.Element => {
           <h2 className="section-title">{t.howToFindTitle}</h2>
           <p className="video-subtitle">{t.videoSubtitle}</p>
 
-          {/* <video
-              src="/guide.mp4"
+          <video
+              src={guide}
               controls
               style={{ width: '100%', borderRadius: '16px' }}
             >
-              <track
-                kind="captions"
-                src="/guide-captions.vtt"
-                srcLang="en"
-                label="English captions"
-                default
-              />
-            </video> */}
-          <div className="video-placeholder" aria-label={t.videoPlaceholderText}>
-            <span className="video-play-icon" aria-hidden="true">&#9654;</span>
-            <span className="video-placeholder-text">{t.videoPlaceholderText}</span>
-          </div>
+            </video>
         </section>
 
         <OrnamentDivider />
