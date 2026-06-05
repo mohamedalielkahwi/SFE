@@ -137,7 +137,7 @@ const InvitationPage = (): JSX.Element => {
               <span className="detail-label">{t.detailTimeLabel}</span>
               {/* TODO: replace placeholder with actual time, e.g. "10:00" */}
               <span className="detail-value">
-                <span className="placeholder">10:00</span>
+                <span className="placeholder">10:30</span>
               </span>
             </div>
 
