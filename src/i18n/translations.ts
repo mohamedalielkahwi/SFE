@@ -49,7 +49,7 @@ const translations: Record<Language, TranslationSchema> = {
   en: {
     fullName: "Mohamed Ali Elkahwi",
     sectionLabel: "Final Year Internship Defense",
-    tagline: "invites you to the honour of attending the defense of his final year project",
+    tagline: "invites you to the honour of sharing the defense of his final year project",
     detailsTitle: "Event Details",
     detailDateLabel: "Date",
     detailTimeLabel: "Time",
