@@ -152,7 +152,7 @@ const InvitationPage = (): JSX.Element => {
               <span className="detail-label">{t.detailRoomLabel}</span>
               {/* TODO: replace placeholder with actual room, e.g. "Salle A1" */}
               <span className="detail-value">
-                <span className="placeholder">Salle amphithéâtre</span>
+                <span className="placeholder">G4</span>
               </span>
             </div>
           </div>
